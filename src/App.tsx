@@ -1,34 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import Studant from './components/student/student.component'
 
+ const COURSES_LIST = ['css','html','c++'];
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+   
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>Welcom to React & node.js </h1> 
+        <Studant  name="mhmd " age={19} isGraduated={false} Courselist={COURSES_LIST}/>
+        <Studant name="ahmad tamem"  age={20} isGraduated={false}Courselist={COURSES_LIST}/>
+        <Studant name="mahmod"  age={18} isGraduated={true}Courselist={COURSES_LIST}/>
+        <Studant name="ans"  age={23} isGraduated={true}Courselist={COURSES_LIST}/>
+        <Studant name="yazan" age={19} isGraduated={false}Courselist={COURSES_LIST}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      
+    
   )
 }
 
