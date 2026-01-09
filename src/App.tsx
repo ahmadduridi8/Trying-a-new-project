@@ -51,11 +51,19 @@ function App() {
     setudentsList(newlist);
 
   }
+  const[totalabsents , settotalabsents]=useState(0);
+  const handelAbsentschange =(name:string , change:number)=>{ // فنكشين اذا تم الاخبار استدعيلي الامر التالي 
+    console.log("Absents change")
+    console.log(`${name}: ${change}`);
+    settotalabsents (totalabsents+change )
+
+  }
   return (
 
     <div>
       <h1>Welcom to React & node.js </h1>
       <button onClick={removelaststudent}>remove last student</button>
+      totalabsents {totalabsents}
       {
         studentsList.map(Student => (
           <Studant
@@ -65,7 +73,8 @@ function App() {
             age={Student.age}
             isGraduated={Student.isGraduated}
             Courselist={Student.Courselist}
-
+            onAbsentsChange={handelAbsentschange}//اذا تم تغير على ال (change) قم باخباري 
+            
           />
         ))
       }
